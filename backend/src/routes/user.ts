@@ -19,6 +19,7 @@ userRouter.get('/',c =>{
       }).$extends(withAccelerate())
 
       const {email,password} = await c.req.json();
+      console.log("body-->",email,password);
       
       try{
           const existingUser = await prisma.user.findFirst({

@@ -2,7 +2,7 @@ import { Hono } from 'hono'
 import mainRouter from "./routes/index"
 
 
-import { PrismaClient } from './generated/prisma'
+import { PrismaClient } from '@prisma/client/edge'
 import { withAccelerate } from '@prisma/extension-accelerate'
 
 const app = new Hono<{Bindings: {DATABASE_URL:string}}>().basePath("/api/v1")
