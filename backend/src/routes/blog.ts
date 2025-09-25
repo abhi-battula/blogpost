@@ -70,7 +70,18 @@ blogRouter.get('/bulk',async c =>{
     console.log("inside bulk api with userId from jwtpayload",c.get("jwtPayload"));
     
     try{
-      const posts = await prisma.post.findMany();
+      const posts = await prisma.post.findMany({
+        select:{
+          title:true,
+          content:true,
+          id:true,
+          author:{
+            select:{
+              name:true
+            }
+          }
+        }
+      });
       return c.json({data:posts})
     }catch(e){
       console.log(e);
