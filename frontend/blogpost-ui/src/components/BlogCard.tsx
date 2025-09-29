@@ -27,15 +27,14 @@ export const BlogCard = ({ authorName, title, description, publishDate , id }: B
     navigate(`/blog/${id}`)
   }
 
-  return <div className="cursor-pointer hover:shadow-xl transition" onClick={navigateToBlog}>
-    {/* {authorName},{title},{description},{publishDate} */}
+  return <div className="cursor-pointer rounded-lg hover:shadow-lg hover:bg-white hover:-translate-y-1 transition duration-300 pt-4" onClick={navigateToBlog}>
     <div className="flex items-center">
       <span className={`border-2 ${randomColor} text-white p-2 w-8 h-8 rounded-full flex items-center justify-center`}>{authorName.charAt(0).toUpperCase()}</span>
       <span className="pl-3">{authorName}</span>
       <span className="pl-3">dec 3 , 2020</span>
     </div>
-    <div className="text-xl font-bold pt-3">{title}</div>
-    <p className="line-clamp-3 pt-3 leading-5">{description}</p>
-    <hr className="my-8 border-t-2" />
+    <div className="text-lg font-semibold text-gray-900 pt-3">{title}</div>
+    <p className="line-clamp-3 pt-3 leading-5 mb-4 text-gray-600">{description}</p>
+    <hr className=" border-t-2" />
   </div>
 }
