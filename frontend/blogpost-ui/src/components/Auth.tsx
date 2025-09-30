@@ -3,7 +3,6 @@ import { LableInput } from "./LableInput"
 import {Link , useNavigate} from "react-router-dom"
 import type { SignupType, SigninType } from "blog-types-common"
 import axios from "axios"
-import { Signup } from "../pages/Signup"
 
 export function Auth({ type }: { type: "signin" | "signup" }) {
 

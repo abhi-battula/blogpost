@@ -47,7 +47,7 @@ export const useBlogId = ({id}:{id:string})=>{
     const api = `https://backend.abhinavbattula01.workers.dev/api/v1/blog/${id}`
     const token = localStorage.getItem('token')
     if(!token) navigate("/signin")
-    const response = axios.get(api,{
+     axios.get(api,{
       headers:{
         Authorization:`Bearer ${token}`
       }

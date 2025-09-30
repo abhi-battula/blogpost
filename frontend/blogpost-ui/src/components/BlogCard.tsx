@@ -8,7 +8,7 @@ type BlogCardProps = {
   id?:string
 }
 
-export const BlogCard = ({ authorName, title, description, publishDate , id }: BlogCardProps) => {
+export const BlogCard = ({ authorName, title, description , id }: BlogCardProps) => { // removed published date
 
   const colors = [
     "bg-pink-400 border-pink-400",
