@@ -1,6 +1,7 @@
 import { useNavigate, useParams } from "react-router-dom"
 import { useBlogId } from "../hooks/BlogHooks"
 import { Navbar } from "../components/Navbar";
+import { BlogSkeleton } from "../components/BlogSkeleton";
 
 
 export const Blog = () => {
@@ -15,7 +16,9 @@ export const Blog = () => {
   console.log("id-------------_>", id);
   console.log("body-------------_>", blog)
 
-  if (!loading) return <div>loading</div>
+  if (!loading){ 
+    return <BlogSkeleton/>
+  }
   if(!blog){
     navigate("/blogs")
     return;
