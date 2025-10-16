@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom"
 import writeIcon from "../assets/write.svg"
 import myAccount from "../assets/my-profile.svg"
-import ProfileLayout from "../pages/ProfileLayout"
 
 export const Navbar = () => {
     return(
