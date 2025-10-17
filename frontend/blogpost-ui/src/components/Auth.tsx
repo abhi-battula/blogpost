@@ -17,9 +17,12 @@ export function Auth({ type }: { type: "signin" | "signup" }) {
     password:""
   })
 
+  const[loading,setLoading] = useState(false);
+
   const navigate =useNavigate()
 
   async function sendRequest(){
+    setLoading(true)
     console.log("from send request method");
     console.log("signup--------->",signupInput);
     console.log("signin------->",signinInput);
@@ -29,6 +32,7 @@ export function Auth({ type }: { type: "signin" | "signup" }) {
       console.log("signupResponse--------->",response);
       const token = response.data.token;
       localStorage.setItem('token',token);
+      setLoading(false);
       navigate("/blogs")
     }catch(e){
       console.log("errormsg from catch block ",e);
@@ -69,7 +73,7 @@ export function Auth({ type }: { type: "signin" | "signup" }) {
             setSigninInput({...signinInput,password:e.target.value})
         }} />
 
-        <button onClick={sendRequest} className="w-full bg-black text-white p-2 rounded-md mt-3">{type}</button>
+        <button onClick={sendRequest} className="w-full bg-black text-white p-2 rounded-md mt-3">{loading ? "loading.." : type}</button>
       </div>
     </div>
   )
